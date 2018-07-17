@@ -107,5 +107,5 @@ venv.bak/
 .idea/
 
 # Django staticfiles
-static/css/
-static/js/
+shortify/static/css/
+shortify/static/js/
