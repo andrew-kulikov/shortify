@@ -83,25 +83,25 @@
     <div class="mbr-table mbr-table-full">
         <div class="mbr-table-cell">
             <div class="container">
-
                 <div class="text-xs-center text-md-center" style="horiz-align: center">
-
                     <h3 class="mbr-section-title display-2">Make your url pretty</h3>
-
                     <div class="mbr-section-text">
                         <p>Paste your ugly url here&nbsp</p>
                         <form method="get">
                             <div class="form-group">
                                 <label for="usr"></label>
-                                <input type="text" class="form-control" id="usr">
-                                <input type="submit" class="btn btn-success">
+                                <input type="text" class="form-control" id="usr" name="url">
+                                <input type="submit" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
                             </div>
                         </form>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                            Launch demo modal
-                        </button>
-
+                        {% for message in messages %}
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            {{ message }}
+                        </div>
+                        {% endfor %}
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -112,9 +112,10 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
-                                        ...
-                                    </div>
+                                    <!--div class="modal-body">
+                                        <h4>Your short url is:</h4>
+                                        <a href="{{ short_url }}">{{ short_url }}</a>
+                                    </div-->
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <button type="button" class="btn btn-primary">Save changes</button>
@@ -122,23 +123,12 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
-
-
-
-
     <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#header3-k"><i class="mbr-arrow-icon"></i></a></div>
-
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/14.2.1/smooth-scroll.js" integrity="sha256-/DAPm4qYaIl0u9G+3JfLfQRAS5RE+LnP8/yzOyjtPRY=" crossorigin="anonymous"></script>
